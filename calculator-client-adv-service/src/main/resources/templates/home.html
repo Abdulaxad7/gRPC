@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function updateForm() {
+            const sign = document.getElementById('sign').value;
+            const num2Field = document.getElementById('num2Field');
+
+            if (sign === 'pow') {
+                num2Field.style.display = 'table-cell';
+            } else {
+                num2Field.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="/" method="post">
+    <table>
+        <tr>
+            <td>
+                <label for="sign">Select Operation:</label>
+                <select name="sign" id="sign" onchange="updateForm()">
+                    <option value="cos" name="cos">cos</option>
+                    <option value="sin" name="sin">sin</option>
+                    <option value="pow" name="pow">pow</option>
+                    <option value="exp" name="exp">exp</option>
+                </select>
+            </td>
+        </tr>
+        <tr id="num1Field">
+            <td>
+                <label for="num1">a:</label>
+                <input type="text" id="num1" name="num1">
+            </td>
+            <td id="num2Field" style="display:none;">
+                <label for="num2">b:</label>
+                <input type="text" id="num2" name="num2">
+            </td>
+            <td>
+                <h6>=</h6>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Submit">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
