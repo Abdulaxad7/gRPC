@@ -1,0 +1,83 @@
+syntax = "proto3";
+
+package calculator;
+
+option go_package="./pb";
+
+service BasicCalculator {
+  rpc Add(AddRequest) returns (AddResponse);
+  rpc Subtract(SubtractRequest) returns (SubtractResponse);
+  rpc Divide(DivideRequest) returns (DivideResponse);
+  rpc Multiply(MultiplyRequest) returns (MultiplyResponse);
+}
+
+message AddRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message AddResponse {
+  int64 result = 1;
+}
+
+message MultiplyRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message MultiplyResponse {
+  int64 result = 1;
+}
+message DivideRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message DivideResponse{
+  int64 result = 1;
+}
+message SubtractRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message SubtractResponse {
+  int64 result = 1;
+}
+
+service AdvancesCalculator{
+  rpc Exp(ExpRequest) returns (ExpResponse);
+  rpc Power(PowerRequest) returns (PowerResponse);
+  rpc Sin(SinRequest) returns (SinResponse);
+  rpc Cos(CosRequest) returns (CosResponse);
+}
+
+message ExpRequest {
+  int64 a = 1;
+}
+
+message ExpResponse {
+  int64 result = 1;
+}
+message PowerRequest {
+  int64 a = 1;
+  int64 b = 2;
+}
+
+message PowerResponse {
+  int64 result = 1;
+}
+message SinRequest {
+  int64 a = 1;
+}
+
+message SinResponse {
+  int64 result = 1;
+}
+message CosRequest {
+  int64 a = 1;
+}
+
+message CosResponse {
+  int64 result = 1;
+}
